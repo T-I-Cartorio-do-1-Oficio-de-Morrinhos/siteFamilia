@@ -20,6 +20,20 @@
   nav.addEventListener("click", (e) => e.target.closest("a") && setMenu(false));
   document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
 
+  // Placa em modal
+  const plaque = document.getElementById("placa");
+  const openBtn = document.querySelector("[data-plaque-open]");
+  if (plaque && openBtn && typeof plaque.showModal === "function") {
+    openBtn.addEventListener("click", () => {
+      plaque.showModal();
+      document.body.classList.add("dialog-open");
+      plaque.querySelector(".plaque").scrollTop = 0;
+    });
+    plaque.querySelector("[data-plaque-close]").addEventListener("click", () => plaque.close());
+    plaque.addEventListener("click", (e) => { if (e.target === plaque) plaque.close(); });
+    plaque.addEventListener("close", () => { document.body.classList.remove("dialog-open"); openBtn.focus(); });
+  }
+
   // Rolagem: cabeçalho, barra de leitura e paralaxe
   const progress = document.querySelector(".reading-progress");
   const parallax = [...document.querySelectorAll("[data-parallax]")];
