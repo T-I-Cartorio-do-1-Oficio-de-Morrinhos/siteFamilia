@@ -287,14 +287,19 @@ body.dialog-open { overflow: hidden; }
 .plaque .plaque-motto { font-style: italic; font-weight: 500; font-size: clamp(18px, 1.8vw, 22px); color: var(--marsala-deep); margin-bottom: 0; }
 .plaque .plaque-sign { font: 600 11px/1.4 var(--sans); letter-spacing: 0.26em; text-transform: uppercase; margin: 20px auto 0; max-width: none; opacity: 0.8; }
 .plaque-close {
-  position: absolute; top: -18px; right: -18px; z-index: 5; z-index: 2; width: 44px; height: 44px; border-radius: 50%;
+  position: absolute; top: 0; right: -60px; z-index: 5; width: 44px; height: 44px; border-radius: 50%;
   display: grid; place-items: center; background: var(--marsala); color: #fff; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.6);
   transition: background 0.2s, transform 0.3s var(--ease);
 }
 .plaque-close:hover { background: var(--marsala-deep); transform: rotate(90deg); }
+/* Sem espaço ao lado da placa: o X sobe para cima dela, fora do metal */
+@media (max-width: 1060px) {
+  .plaque-dialog { padding-top: 56px; }
+  .plaque-close { top: 0; right: 0; }
+  .plaque-inner { max-height: calc(100svh - 32px - 28px - 56px); }
+}
 .plaque-close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 @media (max-width: 560px) {
-  .plaque-close { top: 8px; right: 8px; width: 40px; height: 40px; }
   .plaque { padding: 10px; }
   .screw { width: 9px; height: 9px; }
   .s1, .s2 { top: 1px; } .s3, .s4 { bottom: 1px; } .s1, .s3 { left: 1px; } .s2, .s4 { right: 1px; }
