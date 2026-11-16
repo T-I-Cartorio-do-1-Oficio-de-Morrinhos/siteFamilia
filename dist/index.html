@@ -91,6 +91,7 @@
             <span class="hero-place-label">Ler a placa</span>
             <span class="hero-place-sub">Texto gravado em metal</span>
           </button>
+          <button class="artist-trigger intro" type="button" style="--d: 1.3s" data-artist-open aria-haspopup="dialog" aria-label="Sobre o artista que fez a escultura" title="Sobre o artista">?</button>
           <p class="hero-motto intro" style="--d: 1.1s">Um só corpo, uma só alma, <br />um só coração.</p>
         </div>
         <a class="scroll-cue" href="#escultura" aria-label="Rolar para a escultura">
@@ -284,6 +285,26 @@
           <p class="plaque-sign">Morrinhos/GO · Novembro de 2025</p>
         </div>
       </article>
+    </dialog>
+
+    <dialog class="artist-dialog" id="artista" aria-labelledby="artista-titulo">
+      <button class="artist-close" type="button" data-artist-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+      </button>
+      <p class="artist-kicker">O artista</p>
+      <h2 id="artista-titulo">Samuel <em>Caixeta</em></h2>
+      <p>
+        Artista plástico goiano, Samuel Caixeta pinta quadros e murais e cria
+        esculturas. Seu trabalho já esteve em exposições em mais de dez países.
+      </p>
+      <p>
+        A escultura da família, com as quatro figuras abraçadas sobre o tronco
+        de raiz, é obra dele.
+      </p>
+      <a class="artist-link" href="https://www.instagram.com/samuelcaixetaoficial/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.6" /></svg>
+        @samuelcaixetaoficial
+      </a>
     </dialog>
 
     <footer class="site-footer">

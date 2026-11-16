@@ -34,6 +34,23 @@
     plaque.addEventListener("close", () => { document.body.classList.remove("dialog-open"); openBtn.focus(); });
   }
 
+  // Balão "?" da capa: modal sobre o artista
+  const artist = document.getElementById("artista");
+  const artistBtn = document.querySelector("[data-artist-open]");
+  if (artist && artistBtn && typeof artist.showModal === "function") {
+    artistBtn.addEventListener("click", () => {
+      artist.showModal();
+      document.body.classList.add("dialog-open");
+    });
+    artist.querySelector("[data-artist-close]").addEventListener("click", () => artist.close());
+    artist.addEventListener("click", (e) => {
+      if (e.target !== artist) return;
+      const r = artist.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) artist.close();
+    });
+    artist.addEventListener("close", () => { document.body.classList.remove("dialog-open"); artistBtn.focus(); });
+  }
+
   // Rolagem: cabeçalho, barra de leitura e paralaxe
   const progress = document.querySelector(".reading-progress");
   const parallax = [...document.querySelectorAll("[data-parallax]")];
