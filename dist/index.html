@@ -23,6 +23,16 @@
     <link rel="stylesheet" href="./fonts.css" />
     <link rel="stylesheet" href="./styles.css" />
     <script>
+      /* Ao recarregar, a página sempre volta para o início (não para onde estava). */
+      (function () {
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+        function topo() { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }
+        topo();
+        document.addEventListener("DOMContentLoaded", topo);
+      })();
+    </script>
+    <script>
       document.documentElement.classList.add("js");
     </script>
     <script src="./app.js" defer></script>
