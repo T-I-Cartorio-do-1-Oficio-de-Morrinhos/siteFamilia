@@ -552,6 +552,7 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
 .artist-dialog[open] { animation: artist-in 0.5s var(--ease-out); }
 .artist-dialog[open]::backdrop { animation: fade-in 0.4s ease; }
 @keyframes artist-in { from { opacity: 0; transform: translateY(18px) scale(0.97); } }
+.artist-photo { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 2px solid var(--marsala-light); box-shadow: 0 0 0 5px rgba(149, 82, 81, 0.25); }
 .artist-kicker { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--marsala-light); }
 .artist-dialog h2 { font: 400 40px/1.05 var(--serif); margin: 8px 0 18px; }
 .artist-dialog h2 em { color: var(--marsala-light); }
