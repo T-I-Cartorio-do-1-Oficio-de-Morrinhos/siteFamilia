@@ -532,16 +532,32 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
   .symbol-num { width: 44px; height: 44px; font-size: 19px; }
 }
 
-/* ---------- Balão "?" da capa e modal sobre o artista ---------- */
+/* Botão "Conheça o Artista" (igual nos sites da Família e da Anna Maria; só as cores mudam) */
+.artist-trigger{position:absolute;z-index:5;display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 16px 0 5px;border-radius:999px;
+  font:500 13px/1 var(--sans,'DM Sans',Arial,sans-serif);letter-spacing:.02em;white-space:nowrap;cursor:pointer;
+  color:var(--at-ink);background:var(--at-bg);border:1px solid var(--at-line);box-shadow:0 10px 26px -14px var(--at-shadow);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:background .3s,color .3s,border-color .3s,box-shadow .3s,scale .3s cubic-bezier(.16,1,.3,1)}
+.artist-trigger::before{content:"";position:absolute;inset:-1px;border-radius:inherit;border:2px solid var(--at-accent);opacity:0;pointer-events:none;animation:artist-ring 3.2s cubic-bezier(.2,.7,.2,1) 2.4s infinite}
+.artist-trigger-photo{position:relative;width:30px;height:30px;flex:none;border-radius:50%;object-fit:cover;border:1.5px solid var(--at-photo-ring);transition:border-color .3s}
+.artist-trigger-label{position:relative}
+.artist-trigger svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;animation:artist-nudge 3.2s ease-in-out 2.4s infinite;transition:translate .3s cubic-bezier(.16,1,.3,1)}
+.artist-trigger:hover,.artist-trigger:focus-visible{background:var(--at-accent);border-color:var(--at-accent);color:#fff;scale:1.04;box-shadow:0 14px 30px -14px var(--at-shadow)}
+.artist-trigger:hover .artist-trigger-photo,.artist-trigger:focus-visible .artist-trigger-photo{border-color:rgba(255,255,255,.85)}
+.artist-trigger:hover svg,.artist-trigger:focus-visible svg{animation:none;translate:4px 0}
+.artist-trigger:hover::before,.artist-trigger:focus-visible::before{animation:none}
+.artist-trigger:active{scale:.98}
+.artist-trigger:focus-visible{outline:2px solid var(--at-accent);outline-offset:3px}
+@keyframes artist-ring{0%{opacity:1;transform:scale(1)}55%,100%{opacity:0;transform:scale(1.14,1.5)}}
+@keyframes artist-nudge{0%,40%,100%{translate:0 0}15%{translate:4px 0}28%{translate:0 0}}
+@media (prefers-reduced-motion:reduce){.artist-trigger::before,.artist-trigger svg{animation:none}}
+/* Cores do botão "Conheça o Artista" neste site (Marsala) e posição na capa */
 .artist-trigger {
-  position: absolute; z-index: 5; left: calc(50% + var(--sw) * 0.5 + 34px); bottom: calc(3.5svh + var(--sh) * 0.07);
-  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
-  font: 500 18px/1 var(--serif); color: var(--marsala-light);
-  background: rgba(149, 82, 81, 0.16); border: 1px solid rgba(201, 140, 137, 0.5);
-  transition: background 0.25s, color 0.25s, border-color 0.25s, scale 0.25s var(--ease);
+  --at-ink: #f4efe9; --at-bg: rgba(149, 82, 81, 0.28); --at-line: rgba(201, 140, 137, 0.6); --at-accent: var(--marsala);
+  --at-photo-ring: var(--marsala-light); --at-shadow: rgba(0, 0, 0, 0.7);
+  right: var(--gutter); bottom: calc(6svh + 2.6 * clamp(20px, 1.9vw, 28px) + 22px); /* logo acima da frase "Um só corpo..." */
 }
-.artist-trigger:hover, .artist-trigger:focus-visible { background: var(--marsala); border-color: var(--marsala); color: #fff; scale: 1.08; }
-.artist-trigger:focus-visible { outline: 2px solid var(--marsala-light); outline-offset: 3px; }
+/* ---------- Modal sobre o artista ---------- */
 .artist-dialog {
   width: min(440px, calc(100% - 32px)); max-height: calc(100svh - 32px); overflow-y: auto; padding: 44px 36px 34px;
   border: 1px solid rgba(201, 140, 137, 0.3); border-radius: 6px; color: var(--paper);
@@ -570,7 +586,9 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
 .artist-close:hover { background: rgba(149, 82, 81, 0.25); color: #fff; }
 .artist-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 @media (max-width: 900px) {
-  .artist-trigger { bottom: auto; top: calc(var(--header) + 3svh + var(--sh) * 0.86); }
+  /* No celular, "Ler a placa" e "Conheça o Artista" ficam lado a lado */
+  .hero-place { left: calc(50% - 107px); }
+  .artist-trigger { left: calc(50% - 32px); right: auto; bottom: 59px; }
 }
 @media (max-width: 560px) {
   .artist-dialog { padding: 40px 22px 28px; }
