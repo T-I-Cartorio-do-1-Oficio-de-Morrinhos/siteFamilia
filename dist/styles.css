@@ -369,7 +369,7 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
 .family .lead { color: rgba(244, 239, 233, 0.75); }
 
 .timeline {
-  position: relative; display: grid; grid-template-columns: repeat(5, 1fr); margin: clamp(56px, 7vw, 90px) 0;
+  position: relative; display: grid; grid-template-columns: repeat(4, 1fr); margin: clamp(56px, 7vw, 90px) 0 0;
 }
 .timeline::before, .timeline::after {
   content: ""; position: absolute; left: 0; right: 0; top: 64px; height: 1px; background: rgba(244, 239, 233, 0.15);
