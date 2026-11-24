@@ -198,7 +198,7 @@
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const canvas = document.querySelector(".hero-dust");
   const ctx = canvas.getContext("2d");
-  const colors = ["201,140,137", "232,206,170", "244,239,233"];
+  const colors = ["149,82,81", "184,140,80", "108,54,55"]; // tons para a capa clara (antes: "201,140,137", "232,206,170", "244,239,233")
   let w, h, dots, running = true;
   const resize = () => {
     const dpr = Math.min(devicePixelRatio || 1, 2);

@@ -589,3 +589,90 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
   .artist-dialog { padding: 40px 22px 28px; }
   .artist-dialog h2 { font-size: 34px; }
 }
+
+/* ==========================================================================
+   Tema alternado (teste 24/11/2026): capa clara, Escultura escura,
+   Família clara, Valores em Marsala (escura) e rodapé claro.
+   Para voltar ao tema anterior, basta apagar este bloco inteiro
+   (e as cores das partículas em app.js).
+   ========================================================================== */
+
+/* ---- Capa clara ---- */
+.hero {
+  color: var(--ink);
+  background:
+    radial-gradient(70% 55% at 50% 100%, rgba(149, 82, 81, 0.22), transparent 70%),
+    radial-gradient(120% 90% at 50% 0%, #fbf8f4 0%, var(--paper) 55%, var(--paper-deep) 100%);
+}
+.hero-glow { background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 40%), rgba(149, 82, 81, 0.14), transparent 70%); }
+.hero-title em { color: var(--marsala); }
+.halo-disc { box-shadow: 0 0 140px 20px rgba(149, 82, 81, 0.28); }
+.halo-ring { border-color: rgba(149, 82, 81, 0.35); }
+.halo-ring.r2 { border-color: rgba(149, 82, 81, 0.28); }
+.halo-ring.r3 { border-color: rgba(149, 82, 81, 0.14); }
+.statue img { filter: drop-shadow(0 30px 40px rgba(60, 30, 30, 0.32)) drop-shadow(0 0 50px rgba(149, 82, 81, 0.22)); }
+.floor { background: radial-gradient(closest-side, rgba(60, 30, 30, 0.28), transparent); }
+.hero-place { border-left-color: var(--marsala); }
+.hero-place-label { color: var(--marsala); }
+.hero-place-sub { color: rgba(29, 36, 48, 0.6); }
+.hero-place::before { background: var(--navy); }
+.hero-place:hover .hero-place-label, .hero-place:focus-visible .hero-place-label { color: var(--navy); }
+.hero-place:hover .hero-place-sub { color: rgba(29, 36, 48, 0.9); }
+.hero-motto { color: rgba(29, 36, 48, 0.78); }
+.scroll-cue { color: var(--marsala); }
+.scroll-cue:hover { color: var(--navy); }
+.artist-trigger {
+  --at-ink: var(--navy); --at-bg: rgba(255, 255, 255, 0.55); --at-line: rgba(149, 82, 81, 0.5);
+  --at-shadow: rgba(108, 54, 55, 0.45);
+}
+
+/* Cabeçalho no topo, sobre a capa clara: texto escuro. Ao rolar ele ganha o fundo azul e volta ao texto claro. */
+.site-header:not(.scrolled):not(.menu-open) { color: var(--ink); }
+.site-header:not(.scrolled):not(.menu-open) .brand-name em { color: var(--marsala); }
+.site-header:not(.scrolled):not(.menu-open) .main-nav a::after { background: var(--marsala); }
+
+/* ---- 01 Escultura escura ---- */
+.sculpture {
+  color: var(--paper);
+  background: radial-gradient(80% 60% at 0% 0%, rgba(149, 82, 81, 0.22), transparent 70%), var(--navy);
+}
+.sculpture .chapter { color: var(--marsala-light); }
+.sculpture h2 em { color: var(--marsala-light); }
+.sculpture .lead { color: rgba(244, 239, 233, 0.75); }
+.symbols li:hover { background: rgba(255, 255, 255, 0.05); box-shadow: 0 18px 40px -26px rgba(0, 0, 0, 0.8); }
+.symbols p { color: rgba(244, 239, 233, 0.65); }
+.photo-frame::before { border-color: var(--marsala-light); }
+.photo-mask { box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.85); }
+.sculpture-photo figcaption { color: rgba(244, 239, 233, 0.6); }
+
+/* ---- 02 Família clara ---- */
+.family {
+  color: var(--ink);
+  background: radial-gradient(80% 60% at 100% 0%, rgba(149, 82, 81, 0.12), transparent 70%), var(--paper);
+}
+.family h2 em { color: var(--marsala); }
+.family .lead { color: var(--muted); }
+.timeline::before { background: rgba(29, 36, 48, 0.15); }
+.t-year { color: var(--ink); }
+.timeline li::before { background: var(--paper); border-color: var(--marsala); }
+.timeline.drawn li::before { background: var(--marsala); box-shadow: 0 0 0 6px rgba(149, 82, 81, 0.15); }
+.t-label { color: var(--muted); }
+.member { background: rgba(255, 255, 255, 0.6); border-color: rgba(149, 82, 81, 0.22); }
+.member:hover { border-color: rgba(149, 82, 81, 0.55); box-shadow: 0 18px 40px -26px rgba(108, 54, 55, 0.5); }
+.member::after { background: radial-gradient(260px circle at var(--cx, 50%) var(--cy, 0%), rgba(149, 82, 81, 0.12), transparent 70%); }
+.member p { color: var(--muted); }
+
+/* ---- 03 Valores continua em Marsala (escura) ---- */
+
+/* ---- Rodapé claro ---- */
+.site-footer { background: var(--paper); color: var(--ink); }
+.site-footer::before { background: rgba(149, 82, 81, 0.3); }
+.site-footer .brand-name em { color: var(--marsala); }
+.site-footer p { color: var(--muted); }
+.site-footer .text-link { color: var(--marsala); }
+.site-footer .text-link:hover { color: var(--navy); }
+
+@media (max-width: 900px) {
+  .hero::after { background: linear-gradient(transparent, var(--paper-deep) 55%); }
+  .hero-place-label { border-color: rgba(149, 82, 81, 0.5); }
+}
