@@ -160,26 +160,30 @@ em { font-style: italic; }
 
 .hero-place, .hero-motto { position: absolute; z-index: 3; bottom: 6svh; }
 .hero-place {
-  left: var(--gutter); display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left;
-  padding: 2px 0 2px 18px; border-left: 1px solid var(--marsala-light); cursor: pointer;
+  left: var(--gutter); display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; cursor: pointer;
 }
+/* Botão "Ler a placa": pílula em latão, como a placa de metal, com anel que pulsa para chamar atenção */
 .hero-place-label {
-  position: relative; font-size: 12px; line-height: 1.9; letter-spacing: 0.24em; text-transform: uppercase; color: var(--marsala-light);
-  transition: color 0.3s;
+  position: relative; display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 18px 0 16px; border-radius: 999px;
+  font: 600 12px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: #3a2c1f;
+  background: linear-gradient(135deg, #b8935b 0%, #e8cf9f 45%, #d9bd8a 60%, #a88250 100%);
+  box-shadow: 0 0 0 1px rgba(255, 240, 210, 0.35) inset, 0 12px 28px -12px rgba(0, 0, 0, 0.7), 0 0 24px -6px rgba(217, 189, 138, 0.45);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s, filter 0.3s;
 }
 .hero-place-label::after {
-  content: ""; position: absolute; left: 0; right: 0.24em; bottom: 0; height: 1px; background: currentColor;
-  transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease);
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; border: 2px solid #e8cf9f; opacity: 0; pointer-events: none;
+  animation: artist-ring 3.2s cubic-bezier(.2,.7,.2,1) 2s infinite;
 }
-.hero-place-sub { font: italic 400 16px/1.3 var(--serif); color: rgba(244, 239, 233, 0.6); transition: color 0.3s; }
-.hero-place::before {
-  content: ""; position: absolute; left: -1px; top: 0; bottom: 0; width: 1px; background: #fff;
-  transform: scaleY(0); transform-origin: top; transition: transform 0.4s var(--ease);
+.hero-place-label svg { width: 17px; height: 17px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.hero-place-label .hp-arrow { width: 15px; height: 15px; animation: artist-nudge 3.2s ease-in-out 2s infinite; }
+.hero-place-sub { font: italic 400 16px/1.3 var(--serif); color: rgba(244, 239, 233, 0.6); padding-left: 6px; transition: color 0.3s; }
+.hero-place:hover .hero-place-label, .hero-place:focus-visible .hero-place-label {
+  transform: translateY(-2px) scale(1.03); filter: brightness(1.08);
+  box-shadow: 0 0 0 1px rgba(255, 240, 210, 0.5) inset, 0 16px 32px -12px rgba(0, 0, 0, 0.75), 0 0 34px -4px rgba(217, 189, 138, 0.6);
 }
-.hero-place:hover .hero-place-label, .hero-place:focus-visible .hero-place-label { color: #fff; }
-.hero-place:hover .hero-place-label::after { transform: scaleX(1); }
+.hero-place:hover .hero-place-label::after, .hero-place:focus-visible .hero-place-label::after { animation: none; }
 .hero-place:hover .hero-place-sub { color: rgba(244, 239, 233, 0.9); }
-.hero-place:hover::before { transform: scaleY(1); }
+.hero-place:active .hero-place-label { transform: scale(0.98); }
 .hero-motto {
   right: var(--gutter); text-align: right; font: italic 400 clamp(20px, 1.9vw, 28px)/1.3 var(--serif); color: rgba(244, 239, 233, 0.8);
 }
@@ -502,11 +506,9 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
   .hero-title { position: absolute; left: 0; right: 0; top: calc(var(--header) + 3svh + var(--sh) - 3.2svh); z-index: 3; text-align: center; font-size: clamp(44px, 13.5vw, 84px); line-height: 0.98; bottom: auto; }
   .hero-title .line { position: static; display: block; padding: 0.04em 0 0.14em; }
   .hero::after { content: ""; position: absolute; inset: 55% 0 0; z-index: 2; background: linear-gradient(transparent, var(--navy) 55%); pointer-events: none; }
-  .hero-place { left: 50%; bottom: 62px; transform: translateX(-50%); align-items: center; text-align: center; border-left: 0; padding: 0; }
+  .hero-place { left: 50%; bottom: 62px; transform: translateX(-50%); align-items: center; text-align: center; }
   .loaded .hero-place { transform: translateX(-50%); }
-  .hero-place::before { display: none; }
-  .hero-place-label { font-size: 11px; padding: 6px 16px; border: 1px solid rgba(201, 140, 137, 0.55); border-radius: 999px; }
-  .hero-place-label::after { display: none; }
+  .hero-place-label { height: 44px; font-size: 11px; }
   .hero-place-sub { display: none; }
   .hero-motto { display: none; }
   .hero-motto br { display: none; }
@@ -552,7 +554,7 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
 .artist-trigger:focus-visible{outline:2px solid var(--at-accent);outline-offset:3px}
 @keyframes artist-ring{0%{opacity:1;transform:scale(1)}55%,100%{opacity:0;transform:scale(1.14,1.5)}}
 @keyframes artist-nudge{0%,40%,100%{translate:0 0}15%{translate:4px 0}28%{translate:0 0}}
-@media (prefers-reduced-motion:reduce){.artist-trigger::before,.artist-trigger svg{animation:none}}
+@media (prefers-reduced-motion:reduce){.artist-trigger::before,.artist-trigger svg,.hero-place-label::after,.hero-place-label .hp-arrow{animation:none}}
 /* Cores do botão "Conheça o Artista" neste site (Marsala) e posição na capa */
 .artist-trigger {
   --at-ink: #f4efe9; --at-bg: rgba(149, 82, 81, 0.28); --at-line: rgba(201, 140, 137, 0.6); --at-accent: var(--marsala);
