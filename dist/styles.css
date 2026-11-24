@@ -388,6 +388,12 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
 }
 .timeline.drawn li::before { background: var(--marsala-light); box-shadow: 0 0 0 6px rgba(201, 140, 137, 0.18); }
 .t-label { font-size: 15px; letter-spacing: 0.04em; color: rgba(244, 239, 233, 0.75); }
+/* Computador: anos e textos centralizados em cima de cada círculo; a linha vai do primeiro ao último círculo */
+@media (min-width: 901px) {
+  .timeline li { text-align: center; padding-right: 0; }
+  .timeline li::before { left: 50%; margin-left: -6.5px; }
+  .timeline::before, .timeline::after { left: 12.5%; right: 12.5%; }
+}
 
 .members { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .member {
