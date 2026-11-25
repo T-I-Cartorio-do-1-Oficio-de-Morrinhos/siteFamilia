@@ -597,3 +597,16 @@ h2 { text-wrap: balance; font: 400 clamp(40px, 5.4vw, 76px)/1.02 var(--serif); m
   .artist-dialog { padding: 40px 22px 28px; }
   .artist-dialog h2 { font-size: 34px; }
 }
+
+/* ---------- 02 Família em tema claro (desde 25/11/2026, com a seção 01 no topo e a obra em destaque escura logo depois) ---------- */
+.family {
+  color: var(--ink);
+  background: radial-gradient(80% 60% at 100% 0%, rgba(149, 82, 81, 0.12), transparent 70%), var(--paper);
+}
+.family h2 em { color: var(--marsala); }
+.family .lead { color: var(--muted); }
+.family .timeline::before { background: rgba(29, 36, 48, 0.15); }
+.family .t-year { color: var(--ink); }
+.family .timeline li::before { background: var(--paper); border-color: var(--marsala); }
+.family .timeline.drawn li::before { background: var(--marsala); box-shadow: 0 0 0 6px rgba(149, 82, 81, 0.15); }
+.family .t-label { color: var(--muted); }
