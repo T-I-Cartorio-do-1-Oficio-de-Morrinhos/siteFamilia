@@ -59,64 +59,75 @@
     </header>
 
     <main id="conteudo">
-      <!-- A obra de arte (placa + significado) -->
-      <section class="sculpture" id="obra-de-arte" aria-labelledby="obra-de-arte-title">
-        <div class="wrap sculpture-grid">
-          <div class="sculpture-text">
-            <p class="chapter reveal"><span>01</span> A obra de arte</p>
-            <h2 id="obra-de-arte-title" class="reveal">
-              Quatro figuras, <em>um só gesto.</em>
+      <!-- Abertura: 01 A obra de arte (primeira coisa que se vê no site) -->
+      <section class="sculpture opening" id="obra-de-arte" aria-labelledby="obra-de-arte-title">
+        <div class="opening-deco" aria-hidden="true"><span class="od-glow"></span><span class="od-ring r1"></span><span class="od-ring r2"></span></div>
+        <div class="wrap opening-grid">
+          <div class="opening-text">
+            <p class="opening-kicker intro" style="--d: 0.1s">A força do Lar <i></i> Morrinhos/GO</p>
+            <p class="chapter intro" style="--d: 0.2s"><span>01</span> A obra de arte</p>
+            <h2 id="obra-de-arte-title" class="opening-title split">
+              <span class="line"><span style="--d: 0.3s">Quatro figuras,</span></span>
+              <span class="line"><span style="--d: 0.45s"><em>um só gesto.</em></span></span>
             </h2>
-            <p class="lead reveal">
+            <p class="lead intro" style="--d: 0.7s">
               Esta obra de arte traduz o abraço que nos une: abraço que acolhe,
               sustenta e dá sentido à vida. Nela estão nossas histórias, nossas
               origens e nossos sonhos entrelaçados.
             </p>
-            <ul class="symbols">
-              <li class="reveal" style="--i: 0">
-                <span class="symbol-num">I</span>
-                <div>
-                  <h3>O abraço</h3>
-                  <p>A proteção recíproca que ampara e mantém a família em pé.</p>
-                </div>
-              </li>
-              <li class="reveal" style="--i: 1">
-                <span class="symbol-num">II</span>
-                <div>
-                  <h3>As quatro figuras</h3>
-                  <p>Um lar de paz e afeto, onde João e Gabriel são o brilho da esperança.</p>
-                </div>
-              </li>
-              <li class="reveal" style="--i: 2">
-                <span class="symbol-num">III</span>
-                <div>
-                  <h3>O tronco de raiz</h3>
-                  <p>Toda conquista se ergue sobre o amor e as raízes que não se rompem.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <figure class="sculpture-photo reveal">
-            <div class="photo-frame">
-            <div class="photo-mask" data-parallax="-0.06">
-              <img
-                src="./assets/familia-inauguracao-1050.webp?v=2"
-                srcset="./assets/familia-inauguracao-525.webp?v=2 525w, ./assets/familia-inauguracao-1050.webp?v=2 1050w, ./assets/familia-inauguracao-1500.webp?v=2 1500w"
-                sizes="(max-width: 900px) 92vw, 42vw"
-                width="1050"
-                height="1400"
-                loading="lazy"
-                alt="Fabíola e as crianças retiram o pano preto e descobrem a obra de arte da família."
-              />
+            <div class="opening-actions intro" style="--d: 0.85s">
+              <a class="btn btn-solid" href="#destaque">Ver a obra de perto <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+              <a class="btn btn-line" href="#familia">Conhecer a família</a>
             </div>
+          </div>
+          <figure class="sculpture-photo opening-photo intro" style="--d: 0.35s">
+            <div class="photo-frame">
+              <div class="photo-mask" data-parallax="-0.06">
+                <img
+                  src="./assets/familia-inauguracao-1050.webp?v=2"
+                  srcset="./assets/familia-inauguracao-525.webp?v=2 525w, ./assets/familia-inauguracao-1050.webp?v=2 1050w, ./assets/familia-inauguracao-1500.webp?v=2 1500w"
+                  sizes="(max-width: 900px) 88vw, 36vw"
+                  width="1050"
+                  height="1400"
+                  fetchpriority="high"
+                  alt="Fabíola e as crianças retiram o pano preto e descobrem a obra de arte da família."
+                />
+              </div>
+              <span class="opening-badge" aria-hidden="true"><b>2025</b>A obra<br />de arte</span>
             </div>
             <figcaption>A obra de arte sendo descoberta · Morrinhos/GO</figcaption>
           </figure>
         </div>
+
+        <div class="wrap">
+          <ul class="symbols symbols-row">
+            <li class="reveal" style="--i: 0">
+              <span class="symbol-num">I</span>
+              <div>
+                <h3>O abraço</h3>
+                <p>A proteção recíproca que ampara e mantém a família em pé.</p>
+              </div>
+            </li>
+            <li class="reveal" style="--i: 1">
+              <span class="symbol-num">II</span>
+              <div>
+                <h3>As quatro figuras</h3>
+                <p>Um lar de paz e afeto, onde João e Gabriel são o brilho da esperança.</p>
+              </div>
+            </li>
+            <li class="reveal" style="--i: 2">
+              <span class="symbol-num">III</span>
+              <div>
+                <h3>O tronco de raiz</h3>
+                <p>Toda conquista se ergue sobre o amor e as raízes que não se rompem.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- A obra em destaque (antiga capa), logo depois da seção 01 -->
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero" id="destaque" aria-labelledby="hero-title">
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-stage">
           <div class="halo" aria-hidden="true">
