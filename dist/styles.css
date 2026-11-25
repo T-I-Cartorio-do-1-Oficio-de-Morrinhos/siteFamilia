@@ -61,8 +61,9 @@ em { font-style: italic; }
   transition: background 0.4s, border-color 0.4s, transform 0.4s var(--ease);
   border-bottom: 1px solid transparent;
 }
-.site-header.scrolled {
-  background: rgba(15, 27, 39, 0.82);
+/* A primeira seção agora é clara (01 A obra de arte), então o cabeçalho fica sempre com o fundo azul */
+.site-header, .site-header.scrolled {
+  background: rgba(15, 27, 39, 0.96);
   backdrop-filter: blur(14px) saturate(1.2);
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border-color: rgba(201, 140, 137, 0.2);

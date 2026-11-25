@@ -59,45 +59,6 @@
     </header>
 
     <main id="conteudo">
-      <!-- Abertura -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-stage">
-          <div class="halo" aria-hidden="true">
-            <span class="halo-disc"></span>
-            <span class="halo-ring r1"></span>
-            <span class="halo-ring r2"></span>
-            <span class="halo-ring r3"></span>
-          </div>
-          <h1 id="hero-title" class="hero-title split">
-            <span class="line t1"><span style="--d: 0.5s">O abraço</span></span>
-            <span class="line t2"><span style="--d: 0.7s">que nos <em>une.</em></span></span>
-          </h1>
-          <div class="statue">
-            <img
-              src="./assets/estatua-recorte.webp"
-              srcset="./assets/estatua-recorte-800.webp 408w, ./assets/estatua-recorte.webp 780w"
-              sizes="(max-width: 900px) 60vw, 42vh"
-              width="780"
-              height="1529"
-              alt="Obra de arte de quatro figuras claras abraçadas, um casal envolvendo os dois filhos pequenos, sobre um tronco de raiz."
-              fetchpriority="high"
-              draggable="false"
-            />
-          </div>
-          <span class="floor" aria-hidden="true"></span>
-          <button class="hero-place intro" type="button" style="--d: 1s" data-plaque-open aria-haspopup="dialog">
-            <span class="hero-place-label"><svg class="hp-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M7 10h10M7 14h7"/></svg>Ler a placa<svg class="hp-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            <span class="hero-place-sub">Texto gravado em metal</span>
-          </button>
-          <button class="artist-trigger intro" type="button" style="--d: 1.3s" data-artist-open aria-haspopup="dialog"><span class="artist-trigger-label">Conheça o Artista</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <p class="hero-motto intro" style="--d: 1.1s">Um só corpo, uma só alma, <br />um só coração.</p>
-        </div>
-        <a class="scroll-cue" href="#obra-de-arte" aria-label="Rolar para a obra de arte">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" /></svg>
-        </a>
-      </section>
-
       <!-- A obra de arte (placa + significado) -->
       <section class="sculpture" id="obra-de-arte" aria-labelledby="obra-de-arte-title">
         <div class="wrap sculpture-grid">
@@ -152,6 +113,45 @@
             <figcaption>A obra de arte sendo descoberta · Morrinhos/GO</figcaption>
           </figure>
         </div>
+      </section>
+
+      <!-- A obra em destaque (antiga capa), logo depois da seção 01 -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-stage">
+          <div class="halo" aria-hidden="true">
+            <span class="halo-disc"></span>
+            <span class="halo-ring r1"></span>
+            <span class="halo-ring r2"></span>
+            <span class="halo-ring r3"></span>
+          </div>
+          <h1 id="hero-title" class="hero-title split">
+            <span class="line t1"><span style="--d: 0.5s">O abraço</span></span>
+            <span class="line t2"><span style="--d: 0.7s">que nos <em>une.</em></span></span>
+          </h1>
+          <div class="statue">
+            <img
+              src="./assets/estatua-recorte.webp"
+              srcset="./assets/estatua-recorte-800.webp 408w, ./assets/estatua-recorte.webp 780w"
+              sizes="(max-width: 900px) 60vw, 42vh"
+              width="780"
+              height="1529"
+              alt="Obra de arte de quatro figuras claras abraçadas, um casal envolvendo os dois filhos pequenos, sobre um tronco de raiz."
+              fetchpriority="high"
+              draggable="false"
+            />
+          </div>
+          <span class="floor" aria-hidden="true"></span>
+          <button class="hero-place intro" type="button" style="--d: 1s" data-plaque-open aria-haspopup="dialog">
+            <span class="hero-place-label"><svg class="hp-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M7 10h10M7 14h7"/></svg>Ler a placa<svg class="hp-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="hero-place-sub">Texto gravado em metal</span>
+          </button>
+          <button class="artist-trigger intro" type="button" style="--d: 1.3s" data-artist-open aria-haspopup="dialog"><span class="artist-trigger-label">Conheça o Artista</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="hero-motto intro" style="--d: 1.1s">Um só corpo, uma só alma, <br />um só coração.</p>
+        </div>
+        <a class="scroll-cue" href="#familia" aria-label="Rolar para a família">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" /></svg>
+        </a>
       </section>
 
       <!-- A família + história -->
